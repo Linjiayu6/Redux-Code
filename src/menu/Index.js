@@ -1,7 +1,7 @@
 /* eslint class-methods-use-this: 0 */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // import styles from './static/style.css';
 import Checkbox from 'antd/lib/checkbox';
 
