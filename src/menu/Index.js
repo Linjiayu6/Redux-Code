@@ -89,7 +89,12 @@ class Index extends Component {
     return (
       <div>
         {['dish', 'drink'].map(name => <div key={name}>{this.renderItem(name)}</div>)}
-        <Button type="primary" onClick={() => this.onOrder()}>下单</Button>
+        <Button
+          type="primary"
+          onClick={() => this.onOrder()}
+        >
+          下单
+        </Button>
       </div>
     );
   }
