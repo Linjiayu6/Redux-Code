@@ -1,0 +1,95 @@
+{
+	"name": "redux-code",
+	"version": "1.0.0",
+	"description": "learn redux code",
+	"main": "index.js",
+	"scripts": {
+		"dev": "./node_modules/.bin/pm2 startOrGracefulReload ./pm2-server.json --only redux-local",
+		"lint": "eslint . --fix && echo 'ESLint Passed ✔\\n'",
+		"build": "webpack --progress --config webpack.config.js"
+	},
+	"config": {
+		"ghooks": {
+			"pre-push": "npm run lint"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Linjiayu6/learn-redux-code.git"
+	},
+	"author": "linjiayu",
+	"license": "ISC",
+	"dependencies": {
+		"antd": "^3.1.3",
+		"babel-core": "6.24.1",
+		"babel-loader": "^7.1.0",
+		"babel-plugin-transform-decorators-legacy": "^1.3.4",
+		"babel-plugin-transform-es2015-spread": "^6.22.0",
+		"babel-plugin-transform-object-rest-spread": "^6.23.0",
+		"babel-plugin-transform-react-jsx": "^6.23.0",
+		"babel-polyfill": "6.23.0",
+		"babel-preset-env": "^1.6.1",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-react": "^6.24.1",
+		"babel-preset-stage-2": "^6.22.0",
+		"babel-preset-stage-3": "6.24.1",
+		"babel-register": "^6.24.1",
+		"classnames": "^2.2.5",
+		"comma-number": "^2.0.0",
+		"ejs": "^2.5.7",
+		"koa": "2.2.0",
+		"koa-convert": "^1.2.0",
+		"koa-router": "7.1.1",
+		"koa-webpack-middleware": "^1.0.7",
+		"moment": "^2.19.2",
+		"pm2": "2.4.4",
+		"prop-types": "^15.5.10",
+		"ramda": "^0.24.1",
+		"react": "15.6.2",
+		"react-dom": "^15.6.2",
+		"react-redux": "^5.0.6",
+		"react-router": "^3.2.0",
+		"react-router-dom": "^4.0.0-beta.8",
+		"react-router-redux": "^4.0.8",
+		"redux": "^3.7.2",
+		"redux-thunk": "^2.2.0",
+		"webpack": "^2.7.0",
+		"xtend": "^4.0.1"
+	},
+	"devDependencies": {
+		"@types/node": "^8.0.57",
+		"babel-eslint": "^7.2.2",
+		"babel-preset-es2015-webpack": "^6.4.3",
+		"babel-preset-react-hmre": "^1.1.1",
+		"css-loader": "^0.28.7",
+		"eslint": "^3.19.0",
+		"eslint-config-airbnb": "^15.0.1",
+		"eslint-plugin-import": "^2.8.0",
+		"eslint-plugin-json": "^1.2.0",
+		"eslint-plugin-jsx-a11y": "^5.0.3",
+		"eslint-plugin-node": "^5.0.0",
+		"eslint-plugin-promise": "^3.5.0",
+		"eslint-plugin-react": "^7.0.1",
+		"extract-text-webpack-plugin": "^2.1.2",
+		"file-loader": "^0.11.2",
+		"ghooks": "^2.0.2",
+		"html-loader": "^0.4.5",
+		"html-webpack-plugin": "^2.28.0",
+		"image-webpack-loader": "^3.3.1",
+		"less": "^2.7.3",
+		"less-loader": "^4.0.5",
+		"react-hot-loader": "^3.0.0-beta.6",
+		"style-loader": "^0.18.2",
+		"url-loader": "^0.5.9",
+		"webpack-dev-server": "2.2.0",
+		"webpack-manifest-plugin": "^1.1.2"
+	},
+	"babel": {
+		"presets": [
+			"es2015",
+			"stage-3"
+		],
+		"sourceMaps": true,
+		"retainLines": true
+	}
+}

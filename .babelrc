@@ -1,0 +1,17 @@
+{
+  "presets": [
+    ["es2015", {
+      "targets": {
+        "node": "current"
+      }
+    }],
+    "stage-2",
+    "react"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "transform-object-rest-spread",
+    "transform-es2015-spread",
+    "transform-decorators-legacy"
+  ]
+}
