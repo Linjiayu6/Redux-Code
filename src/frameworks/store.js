@@ -9,11 +9,6 @@ const storeEnhancer = compose(applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : compose
 );
 
-// const configCreateStore = (initialState) => {
-//   const store = createStore(rootReducer, initialState, storeEnhancer);
-//   return store;
-// };
-
 const store = createStore(rootReducer, {}, storeEnhancer);
 
 // 动态更新state内容, 使用replaceReducer

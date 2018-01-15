@@ -12,8 +12,8 @@ const routesList = [
 
 const AppRouter = () => (
   <Router>
-    <div>
-      <h2>智能餐厅</h2>
+    <div style={{ padding: '20px' }}>
+      <h2>智能餐厅菜单</h2>
       <Switch>
         {
           routesList.map(item =>

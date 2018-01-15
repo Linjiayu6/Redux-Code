@@ -1,14 +1,12 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
 
-// const reducers = {
-//   test1: (state = {}, action) => state,
-//   test2: (state = {}, action) => state,
-// };
+import dishReducer from './menu/reducers/dish';
+import drinkReducer from './menu/reducers/drink';
 
+// reducers厨师长
 const rootReducer = combineReducers({
-  // ...reducers,
-  routing: routerReducer,
+  dishMaterial: dishReducer,
+  drinkMaterial: drinkReducer,
 });
 
 export default rootReducer;
