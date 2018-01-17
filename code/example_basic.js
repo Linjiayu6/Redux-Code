@@ -1,4 +1,4 @@
-
+// example_basic.js例子 redux的灵魂
 const combineReducer = (state = { name: 1 }, action) => {
   if (action.type === 'BURGER') {
     return { name: action.type };
