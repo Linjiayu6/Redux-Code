@@ -1,6 +1,7 @@
 src/**/*.less
 
 server/*
+code/*
 
 yarn.lock
 package-lock.json
