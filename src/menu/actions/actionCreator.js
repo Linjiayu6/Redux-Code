@@ -1,3 +1,8 @@
+/**
+ * 你可能会问？
+ * 1. dispatch是如何和reducer连接到一起的
+ */
+
 export const ON_ORDER_DISH = 'ON_ORDER_DISH';
 export const ON_ORDER_DRINK = 'ON_ORDER_DRINK';
 

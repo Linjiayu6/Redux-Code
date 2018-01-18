@@ -1,3 +1,4 @@
+
 // example_basic.js例子 redux的灵魂
 const combineReducer = (state = { name: 1 }, action) => {
   if (action.type === 'BURGER') {
@@ -10,14 +11,14 @@ const combineReducer = (state = { name: 1 }, action) => {
 };
 
 const createStore = (reducer, preloadedState = { name: 'ljy' }) => {
-  const currentReducer = reducer;
-  let currentState = preloadedState;
+  const currentReducer = reducer; // 改变state的函数
+  let currentState = preloadedState; // 初始化传入state的默认值
   console.log('currentState....', currentState);
 
   const getState = () => currentState;
   const dispatch = (action) => {
-    console.log('dispatch - currentState', currentState);
     currentState = currentReducer(currentState, action);
+    console.warn('dispatch后变更值', currentState);
   };
 
   return {
@@ -28,14 +29,13 @@ const createStore = (reducer, preloadedState = { name: 'ljy' }) => {
 
 
 const store = createStore(combineReducer);
-
-console.log('(1)', store.getState());
+console.log('--------(1)初始化--------', store.getState());
 
 store.dispatch({ type: 'BURGER' });
-console.log('(2)', store.getState());
+console.log('--------(2)type类型为BURGER--------', store.getState());
 
 store.dispatch({ type: 'COFFEE' });
-console.log('(3)', store.getState());
+console.log('--------(3)type类型为COFFEE--------', store.getState());
 
 
 /**

@@ -12,18 +12,18 @@ const storeEnhancer = compose(applyMiddleware(thunk),
 const store = createStore(rootReducer, {}, storeEnhancer);
 
 // 动态更新state内容, 使用replaceReducer
-// if (module.hot) {
-//   module.hot.accept('../reducer', () => {
-//     /* eslint global-require: 0 */
-//     const nextRootReducer = require('../reducer').default;
-//     store.replaceReducer(combineReducers(nextRootReducer));
-//   });
-// }
+if (module.hot) {
+  module.hot.accept('../reducer', () => {
+    /* eslint global-require: 0 */
+    const nextRootReducer = require('../reducer').default;
+    store.replaceReducer(combineReducers(nextRootReducer));
+  });
+}
 
 // subscribe的例子, 每次dispatch一个reducer, 都会触发这个监听器
-// store.subscribe(() => {
-//   const state = store.getState();
-//   console.log(state.kpi);
-// });
+store.subscribe(() => {
+  const state = store.getState();
+  console.log('subscribe:', state);
+});
 
 export default store;

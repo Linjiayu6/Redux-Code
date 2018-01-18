@@ -1,5 +1,9 @@
 /**
  * combineReducers: 对拆分管理的reducer函数进行合并，最终合成一个reducer函数
+ * 
+ * 
+ * 3. dishReducer和drinkReducer分别处理数据, 是如何合并在一起实现数据共享？
+ * 4. 如果合并成一个reducer处理, action.type是怎么匹配，并改变值?
  */
 export default function combineReducers(reducers) {
   // .....省略对传入reducers的类型校验

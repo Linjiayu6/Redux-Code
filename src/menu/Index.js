@@ -5,10 +5,20 @@ import PropTypes from 'prop-types';
 
 import Checkbox from 'antd/lib/checkbox';
 import Button from 'antd/lib/button';
+import Alert from 'antd/lib/alert';
 
 import { onOrder } from './actions/actionCreator';
 
-// import styles from './static/style.css';
+const alertDes = [
+  '主食和酒水分别有不同的厨师制作',
+  '制作一个汉堡包🍔: 需要一片鸡肉+两个蔬菜叶',
+  '制作薯条🍟: 需要三个土豆',
+  '酒水系列原来均一一对应',
+];
+
+const renderAlertDes = () => <div>{
+  alertDes.map((item, key) => <div key={key}>({key + 1}) {item}</div>)}</div>;
+
 const menu = {
   dish: [
     {
@@ -90,11 +100,18 @@ class Index extends Component {
       <div>
         {['dish', 'drink'].map(name => <div key={name}>{this.renderItem(name)}</div>)}
         <Button
+          style={{ marginBottom: 30 }}
           type="primary"
           onClick={() => this.onOrder()}
         >
           下单
         </Button>
+        <Alert
+          message="原材料说明"
+          description={renderAlertDes()}
+          type="warning"
+          showIcon
+        />
       </div>
     );
   }

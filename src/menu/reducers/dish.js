@@ -1,5 +1,13 @@
 import { ON_ORDER_DISH } from '../actions/actionCreator';
 
+/**
+ * 你可能会问？
+ * 1. 为什么reducer为纯函数？
+ * 2. 为什么将不同的reducer分开?
+ * 3. dishReducer和drinkReducer分别处理数据, 是如何合并在一起实现数据共享？ redux.combineReducers
+ * 4. 如果合并成一个reducer处理, action.type是怎么匹配，并改变值?
+ */
+
 const initialState = {
   // 一个汉堡包是一片鸡肉+两个蔬菜叶。 -> 能做10个汉堡
   chicken: 10,
