@@ -23,6 +23,13 @@
  * @returns {Store} A Redux store that lets you read the state, dispatch actions
  * and subscribe to changes.
  */
+
+
+/**
+ * dispatch(action) -> reducer -> return state -> update data
+ * 1. dispatch如何将action值 传给reducer?  提示: reducer是个function
+ * 2. reducer返回的是所有state值，又是如何保存state值? 提示: 函数作用域
+ */
 export default function createStore(reducer, preloadedState, enhancer) {
   if (typeof enhancer !== 'undefined') {
     if (typeof enhancer !== 'function') {

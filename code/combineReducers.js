@@ -31,12 +31,13 @@ export default function combineReducers(reducers) {
       /**
        * action = { type: ON_ORDER_DRINK, payload: { name: 'coffee' } }
        */
-      // *划重点
+      // *划重点 action会在每一个reducer里面执行一遍
       const nextStateForKey = reducer(previousStateForKey, action);
 
       nextState[key] = nextStateForKey;
       hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
     }
+    // 最后返回合并后的state值
     return hasChanged ? nextState : state;
   };
 }
